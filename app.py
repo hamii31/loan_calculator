@@ -223,11 +223,11 @@ if len(df) > 0:
         year_one_interest = df[df['Year'] == 1]['Interest'].sum()
         year_one_principal = df[df['Year'] == 1]['Principal'].sum()
         
-        st.write(f"• **First payment breakdown**: {interest_percentage_first:.1f}% goes to interest (${first_payment_interest:,.2f}) vs {100-interest_percentage_first:.1f}% to principal (${first_payment_principal:,.2f})")
-        st.write(f"• **Year 1 totals**: ${year_one_interest:,.2f} in interest, ${year_one_principal:,.2f} in principal")
+        st.write(f"• **First payment breakdown**: {interest_percentage_first:.1f}% goes to interest ({first_payment_interest:,.2f}) vs {100-interest_percentage_first:.1f}% to principal ({first_payment_principal:,.2f})")
+        st.write(f"• **Year 1 totals**: {year_one_interest:,.2f} in interest, {year_one_principal:,.2f} in principal")
     
     if df.iloc[-1]['Remaining_Balance'] <= 0:
         interest_to_principal_ratio = total_interest / principal
-        st.write(f"• **Total cost**: You'll pay ${total_interest:,.2f} in interest over the life of the loan ({interest_to_principal_ratio:.1%} of the original principal)")
+        st.write(f"• **Total cost**: You'll pay {total_interest:,.2f} in interest over the life of the loan ({interest_to_principal_ratio:.1%} of the original principal)")
     
     st.write(f"• **Early payoff benefit**: Making extra principal payments can significantly reduce total interest paid")
